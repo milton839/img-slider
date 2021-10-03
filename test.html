@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script data-require="jquery@*" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Image rotate with slider</h1>
+      <div class="image-frame">
+        <img id="image" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/9A50/production/_118740593_gettyimages-1231144196.jpg" alt="Picture" />
+        <!--stack-overflow.jpg-->
+      </div>
+      <button id="saveButton">Save</button>
+    </div>
+    <div id="output"></div>
+    <input class="image-rotate" type="range" name="rangeInput" min="-180" max="180" value="0">
+
+    <script>
+      $(function(){
+  let slider = $('input.image-rotate'),
+      image = $('#image');
+  
+  slider.on('change mousemove', function(){
+     image.css('transform', 'rotate(' + $(this).val() + 'deg)')
+  });
+  
+  
+})
+    </script>
+  </body>
+
+</html>
